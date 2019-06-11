@@ -24,7 +24,7 @@ public class DefaultClientAndUserCreator implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Optional<AuthClientDetails> browserClient = authClientRepository.findByClientId("browser");
         if (browserClient.isEmpty()) {
             authClientRepository.save(createClient());
@@ -54,7 +54,10 @@ public class DefaultClientAndUserCreator implements CommandLineRunner {
         browserClientDetails.setClientSecret("$2a$10$fWNTd3H.u7G/aNROVQSifebOkZ2xzU5nUPOCI2Ld42M8E25/ljJqK");
         browserClientDetails.setScopes("ui");
         browserClientDetails.setGrantTypes("refresh_token,password");
+        //One day
         browserClientDetails.setAccessTokenValiditySeconds(3600);
+        //One week
+        browserClientDetails.setRefreshTokenValiditySeconds(604800);
 
         return browserClientDetails;
     }
