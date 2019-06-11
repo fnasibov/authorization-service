@@ -4,3 +4,9 @@ spring:
       host: localhost
       port: 27017
       database: oauth-db
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8080/users/current
+      token-info-uri: http://localhost:8080/oauth/check_token
