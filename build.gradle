@@ -1,19 +1,19 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'org.springframework.boot' version '2.3.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
 }
 
-apply plugin: 'io.spring.dependency-management'
 
 group = 'com.nasibov'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '12'
+version = '0.0.1'
+sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
 }
 ext {
-    set('springCloudVersion', "Greenwich.SR1")
+    set('springCloudVersion', "Hoxton.SR8")
 }
 
 dependencies {
